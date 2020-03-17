@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="ar">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>corona algeria</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.Zmin.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/style.css" rel="stylesheet">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap or whatever CSS thing -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <!-- Add a favicon here -->
+    <!-- <link rel="shortcut icon" type="image/x-icon" href="docs/images/favicon.ico" /> -->
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ==" crossorigin="" />
+    <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js" integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew==" crossorigin=""></script>
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center" id="posts">
+            <h1 class="display-4">احصائيات حول انتشار كورنا في الجزائر
+            
+            </h1>
+            <p class="lead">معلومات مباشرة من وزارة الصحة
+            
+            </p>
+            </img>
+        </div>
+        <div class="row"> 
+            <div class="col-xl-3 col-md-6 mb-4">
+                <div class="card border-left-info shadow h-100 py-2">
+                    <div class="card-body">
+                        <div class="row no-gutters align-items-center">
+                            <div class="col mr-2">
+                                <div class="text-xs font-weight-bold text-info text-uppercase mb-1">المؤكدة
+                                </div> 54  </div>
+                            <div class="col-auto">
+                                <i class="fas fa-comments fa-2x text-gray-300"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-xl-3 col-md-6 mb-4"> 
+                <div class="card border-left-warning shadow h-100 py-2">
+                    <div class="card-body">
+                        <div class="row no-gutters align-items-center">
+                            <div class="col mr-2">
+                             <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">قيد العلاج
+                                </div>  38   </div>
+                            <div class="col-auto">
+                                <i class="fas fa-comments fa-2x text-gray-300"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-xl-3 col-md-6 mb-4"> 
+                <div class="card border-left-danger shadow h-100 py-2">
+                    <div class="card-body">
+                        <div class="row no-gutters align-items-center">
+                            <div class="col mr-2">
+                                <div class="text-xs font-weight-bold text-danger text-uppercase mb-1">الوفيات
+
+                                </div> <text-center>4</text-center> </div>
+                            <div class="col-auto">
+                                <i class="fas fa-comments fa-2x text-gray-300"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-xl-3 col-md-6 mb-4">
+                <div class="card border-left-success shadow h-100 py-2">
+                    <div class="card-body">
+                        <div class="row no-gutters align-items-center">
+                            <div class="col mr-2">
+                                <div class="text-xs font-weight-bold text-success text-uppercase mb-1"> الحالات التي شفيت
+                                </div>   12 </div>
+                            <div class="col-auto">
+                                <i class="fas fa-comments fa-2x text-gray-300"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+      
+
+
+	<div class="container">
+	    <h1 class="text-center">خريطة انتشار الفايروس على المستوى الوطني
+        </h1>
+	    <!-- The map will be rendered inside this div, by default, i set the width to 100% -->
+	    <div id="myAwesomeMap" style="width: 100%; height: 400px;"></div>
+	    <div class="alert alert-warning mt-3" role="alert">
+	    	<b>	Developed by:</b>mounire bengharbi - 0792628281 
+		</div>
+	</div>
+
+
+    <script>
+        //Initialize the map
+        var mymap = L.map('myAwesomeMap').setView([36.481239,2.7301508,12], 10);
+    	//access token can be obtained from either Mapbox or some other endpoint. And it is MANDATORY for the map to be rendered, otherwise, a gray canvas will appear instead.
+        L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoibG91cnNib3VyZyIsImEiOiJjazRtNnk5eGcxbmNuM2tudDkycWJ2Y2JqIn0.A7Wy0-tnuWyFmMxH7axrTw', {
+            maxZoom: 18,
+            attribution: '----sv copy right goes here--- &copy; <a href="https://www.softvenue.io/">sv name here</a>',
+            id: 'mapbox/streets-v11'
+        }).addTo(mymap);
+
+        //An example of a marker, we can color code markers and assign a color for each type. for example, blue for Dairas and red for wilayas
+        //We can either hard code wilayas here or (preferably) put them inside an array and loop through them then add them to the mymap object
+        //	[
+        //		"state_name":"Djelfa",
+        //		"state_coordinates_x":"X",
+        //		"state_coordinates_y":"Y",
+        //		"number_of_votes":"V",
+        //	]
+       
+        var firstMarker = L.marker([36.481239,2.7301508,12]).addTo(mymap);
+        firstMarker.bindPopup("<b style='color:red ; direction:rtl;'>البليدة</b><br> عدد الإصابات 54 عدد الوفيات 04 عدد الحالات قيد التعافي 38 عدد الحالات التي شفيت 12.");
+
+    </script>
+
+
+</body>
+
+</html>

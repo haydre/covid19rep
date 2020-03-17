@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Mounir app</title>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap or whatever CSS thing -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <!-- Add a favicon here -->
+    <!-- <link rel="shortcut icon" type="image/x-icon" href="docs/images/favicon.ico" /> -->
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ==" crossorigin="" />
+    <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js" integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew==" crossorigin=""></script>
+
+</head>
+
+<body>
+	<div class="container">
+	    <h1 class="text-center">خريطة انتشار الفيروس على المستوى الوطني
+        </h1>
+	    <!-- The map will be rendered inside this div, by default, i set the width to 100% -->
+	    <div id="myAwesomeMap" style="width: 100%; height: 400px;"></div>
+	    <div class="alert alert-warning mt-3" role="alert">
+	    	<b>	IMPORTANT:</b> Please, read the source code for further inspection!
+		</div>
+	</div>
+
+
+    <script>
+        //Initialize the map
+        var mymap = L.map('myAwesomeMap').setView([36.699729, 3.057620], 10);
+    	//access token can be obtained from either Mapbox or some other endpoint. And it is MANDATORY for the map to be rendered, otherwise, a gray canvas will appear instead.
+        L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoibG91cnNib3VyZyIsImEiOiJjazRtNnk5eGcxbmNuM2tudDkycWJ2Y2JqIn0.A7Wy0-tnuWyFmMxH7axrTw', {
+            maxZoom: 18,
+            attribution: '----sv copy right goes here--- &copy; <a href="https://www.softvenue.io/">sv name here</a>',
+            id: 'mapbox/streets-v11'
+        }).addTo(mymap);
+
+        //An example of a marker, we can color code markers and assign a color for each type. for example, blue for Dairas and red for wilayas
+        //We can either hard code wilayas here or (preferably) put them inside an array and loop through them then add them to the mymap object
+        //	[
+        //		"state_name":"Djelfa",
+        //		"state_coordinates_x":"X",
+        //		"state_coordinates_y":"Y",
+        //		"number_of_votes":"V",
+        //	]
+        var firstMarker = L.marker([36.699729, 3.057620]).addTo(mymap);
+        firstMarker.bindPopup("<b style='color: red;'>العاصمة</b><br>عدد الوفيات 00 عدد الإصابات 00 عدد الحالات المؤكدة 00 .");
+
+        var secondMarker = L.marker([36.699729, 3.187620]).addTo(mymap);
+        secondMarker.bindPopup("<b>البليدة</b><br>عدد الحالات المؤكدة 00 عدد الوفيات 00 .");
+    </script>
+
+
+</body>
+</html>
