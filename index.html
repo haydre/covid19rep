@@ -23,6 +23,7 @@
 
     <script src = "https://www.gstatic.com/charts/loader.js"></script>
 
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <title>Real-Time Epidemic Tracker</title>
     <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
 
@@ -49,7 +50,11 @@
 
 <div class="d-flex flex-column flex-1 layout-boxed">
 
-   
+    <div class="navbar navbar-expand-md navbar-dark">
+        <div class="navbar-brand">
+        </div>
+    </div>
+
     <div class="page-content">
 
         <div class="content-wrapper">
@@ -68,17 +73,17 @@
                         <div class="card">
                             <div class="row text-center mb-2">
                                 <div class="col-4">
-                                    <h3><span class="text-info-600">95</span></h3>
+                                    <h3><span class="text-info-600">201</span></h3>
                                     <span class="text-muted font-size-sm">حالة إصابة</span>
                                 </div>
 
                                 <div class="col-4">
-                                    <h3><span class="text-success-600">32</span></h3>
+                                    <h3><span class="text-success-600">88</span></h3>
                                     <span class="text-muted font-size-sm">حالة شفاء</span>
                                 </div>
 
                                 <div class="col-4">
-                                    <h3><span class="text-danger-600">12</span></h3>
+                                    <h3><span class="text-danger-600">17</span></h3>
                                     <span  class="text-muted font-size-sm">حالة وفاة</span>
                                 </div>
                             </div>
@@ -114,9 +119,9 @@
                                 <tbody>
                                 <tr>
                                     <th scope="row">البليدة</th>
-                                    <td>47</td>
+                                    <td>110</td>
                                     <td>32</td>
-                                    <td>6</td>
+                                    <td>8</td>
                                 </tr>
                                 <tr>
                                     <th scope="row">الجزائر</th>
@@ -126,6 +131,12 @@
                                 </tr>
                                 <tr>
                                     <th scope="row">تيزي وزو</th>
+                                    <td>6</td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">وهران</th>
                                     <td>6</td>
                                     <td></td>
                                     <td></td>
@@ -164,7 +175,7 @@
                                     <th scope="row">بجاية</th>
                                     <td>1</td>
                                     <td></td>
-                                    <td></td>
+                                    <td>1</td>
                                 </tr>
 
                                 <tr>
@@ -179,8 +190,6 @@
                                     <td></td>
                                     <td></td>
                                 </tr>
-
-
                                 <tr>
                                     <th scope="row">بومرداس</th>
                                     <td>1</td>
@@ -207,12 +216,6 @@
                                 </tr>
                                 <tr>
                                     <th scope="row">سطيف</th>
-                                    <td>1</td>
-                                    <td></td>
-                                    <td></td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">وهران</th>
                                     <td>1</td>
                                     <td></td>
                                     <td></td>
@@ -260,7 +263,56 @@
                         </div>
                     </div>
                 </div>
-   
+     
+                <div class="row">
+                    <div class="col-xl-8">
+                        <div class="card text-right">
+                            <div class="card-header header-elements-inline">
+                                <h6 class="card-title">آخر الأخبار</h6>
+                            </div>
+                            <div class="card-body">
+                                <div class="list-feed list-feed-solid">
+                                    <div class="list-feed-item border-info-800">
+                                        <div class="text-muted font-size-sm mb-0">23/03/2020</div>
+ 201 حالة اصابة مؤكّدة منها 110 بـالبليدة, ارتفاع الوفيات الى 17 وفاة منها 08 بـالبليدة و02 ببجاية و خنشلة                                    </div>
+                                    <div class="list-feed-item border-info-800">
+                                        <div class="text-muted font-size-sm mb-0">21/03/2020</div>
+                                        حالة وفاة لمصاب بكورونا يبلغ من العمر 85 سنة
+                                    </div>
+                                    <div class="list-feed-item border-info-800">
+                                        <div class="text-muted font-size-sm mb-0">19/03/2020</div>
+                                        وفاة رجل يبلغ من العمر 47 سنة في المدية
+                                    </div>
+                                    <div class="list-feed-item border-info-800">
+                                        <div class="text-muted font-size-sm mb-0">19/03/2020</div>
+                                        إصابة 10 ووفاة واحدة
+                                    </div>
+                                    <div class="list-feed-item border-info-800">
+                                        <div class="text-muted font-size-sm mb-0">18/03/2020</div>
+                                        وفاة رجل يبلغ من العمر 52 سنة، وإصابة جديدة من ولاية الوادي
+                                    </div>
+                                    <div class="list-feed-item border-info-800">
+                                        <div class="text-muted font-size-sm mb-0">18/03/2020</div>
+                                        وفاة رجل يبلغ من العمر 62 سنة من ولاية البليدة
+                                    </div>
+
+                                    <div class="list-feed-item border-info-800">
+                                        <div class="text-muted font-size-sm mb-0">12/03/2020</div>
+                                        أول حالة وفاة لرجل يبلغ من العمر 67 سنة.
+                                    </div>
+                                    <div class="list-feed-item border-info-800">
+                                        <div class="text-muted font-size-sm mb-0">02/03/2020</div>
+                                        خمس حالات إصابة بالفيروس في ولاية البليدة.
+                                    </div>
+                                    <div class="list-feed-item border-info-800">
+                                        <div class="text-muted font-size-sm mb-0">28/02/2020</div>
+                                        أول حالة إصابة سجلت لرعية إيطالي في الجزائر.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
                 
                 <div class="row">
@@ -316,6 +368,10 @@
 
                 <div class="alert alert-success alert-styled-right alert-arrow-right alert-dismissible text-right">
                     الخط الأخضر: <span class="font-weight-semibold">3030</span>
+                </div>
+
+                <div class="alert alert-info alert-styled-right alert-arrow-right alpha-teal border-teal alert-dismissible text-right">
+                    إتصل بنا: <span class="font-weight-semibold">repapers.me@gmail.com</span>
                 </div>
 
                 <div class="alert alert-info alert-styled-right alert-arrow-right alert-dismissible text-right">
